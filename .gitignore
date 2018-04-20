@@ -36,3 +36,6 @@ bower_components/
 
 # Log file
 *.log
+
+# less自动生成的css不导入
+*.css

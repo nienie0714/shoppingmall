@@ -1,0 +1,84 @@
+{
+	"server": [
+		{
+			"status": 0,
+			"statusName": "idle",
+			"sId": 0,
+			"type": 0,
+			"address": "bjstdmngbgr01.thoughtworks.com",
+			"ip": "192.168.102",
+			"dir": "/var/lib/cruise-agent",
+			"browser": ["Firefox", "Safari", "Ubuntu", "Chrome"]
+		},
+		{
+			"status": 1,
+			"statusName": "building",
+			"sId": 1,
+			"type": 0,
+			"address": "bjstdmngbgr02.thoughtworks.com",
+			"ip": "192.168.103",
+			"dir": "/var/lib/cruise-agent",
+			"browser": ["Firefox", "Safari", "Ubuntu", "Chrome"]
+		},
+		{
+			"status": 1,
+			"statusName": "building",
+			"sId": 2,
+			"type": 0,
+			"address": "bjstdmngbgr02.thoughtworks.com",
+			"ip": "192.168.104",
+			"dir": "/var/lib/cruise-agent",
+			"browser": ["Firefox", "Safari", "Ubuntu", "Chrome"]
+		},
+		{
+			"status": 1,
+			"statusName": "building",
+			"sId": 3,
+			"type": 0,
+			"address": "bjstdmngbgr02.thoughtworks.com",
+			"ip": "192.168.105",
+			"dir": "/var/lib/cruise-agent",
+			"browser": ["Firefox", "Safari", "Ubuntu", "Chrome"]
+		},
+		{
+			"status": 0,
+			"statusName": "idle",
+			"sId": 4,
+			"type": 1,
+			"address": "bjstdmngbgr02.thoughtworks.com",
+			"ip": "192.168.106",
+			"dir": "/var/lib/cruise-agent",
+			"browser": ["Firefox", "Safari", "Ubuntu", "Chrome"]
+		},
+		{
+			"status": 0,
+			"statusName": "idle",
+			"sId": 5,
+			"type": 1,
+			"address": "bjstdmngbgr02.thoughtworks.com",
+			"ip": "192.168.107",
+			"dir": "/var/lib/cruise-agent",
+			"browser": ["Firefox", "Safari", "Ubuntu", "Chrome"]
+		},
+		{
+			"status": 0,
+			"statusName": "idle",
+			"sId": 6,
+			"type": 1,
+			"address": "bjstdmngbgr02.thoughtworks.com",
+			"ip": "192.168.108",
+			"dir": "/var/lib/cruise-agent",
+			"browser": ["Firefox", "Safari", "Ubuntu", "Chrome"]
+		},
+		{
+			"status": 0,
+			"statusName": "idle",
+			"sId": 7,
+			"type": 1,
+			"address": "bjstdmngbgr02.thoughtworks.com",
+			"ip": "192.168.109",
+			"dir": "/var/lib/cruise-agent",
+			"browser": ["Firefox", "Safari", "Ubuntu", "Chrome"]
+		}
+	]
+}

@@ -4,88 +4,94 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="renderer" content="webkit">
+    <!-- 页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ng-bind与{{}}取值的区别:
+		 {{ }} 是等页面加载完后，再取值；
+		 ng-bind 它是在页面加载的时候，是不会显示{{name}}这种变量出来；
+		 ng-bind 可以解决 ng 页面闪烁加载问题；
+		 ng-bind 只能绑定单个变量，但是 {{ }} 这种方法可以绑定多个变量。  -->
     <title ng-bind="titleTxt"></title>
     <link rel="stylesheet" href="/dist/css/main.css" />
     <script src="/dist/js/vendor.js"></script>
     <script src="/dist/js/function.js"></script>
 </head>
-	<body ng-controller="appController">
-		<div class="header">
-			<div class="container container-device">
-				<div class="row">
-					<div class="col-xs-4">
-						<div class="menu">
-							<i class="fa fa-bars menu-icon" aria-hidden="true" ng-click="showMenu()"></i>
-						</div>
-					</div>
-					<div class="col-xs-4 text-center">
-						<img src="/dist/images/logo.png" alt="logo" class="logo" />
-					</div>
-					<div class="col-xs-4 text-right">
-						<div class="dropdown">
-							<span id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    <img src="/dist/images/userPic.png" alt="name" class="userPic" />
-							    <!-- <span class="caret"></span> -->
-							    <i class="fa fa-chevron-down downIcon"></i>
-							</span>
-							<ul class="dropdown-menu menu-list" aria-labelledby="dLabel">
-							    <li>
-							    	<a href="#">
-										<i class="fa fa-id-card-o" ></i>
-										<span>Profile</span>
-							    	</a>
-							    </li>
-							    <li>
-							    	<a href="#">
-										<i class="fa fa-sign-out"></i>
-										<span>Sign Out</span>
-							    	</a>
-							    </li>
-							</ul>
-						</div>
-					</div>
+
+<body ng-controller="appController">
+<div class="header">
+	<div class="container container-device">
+	<!-- .col-md-*  12个  针对小屏幕 从堆叠到水平排列.col-xs-24*   sm-16-->	 
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="menu">
+					<i class="fa fa-bars menu-icon" aria-hidder="true" ng-click="showMenu()"></i>
 				</div>
 			</div>
-			
-		</div>
-		<div class="container content">
-			<div class="row">
-				<div class="col-md-3 col-sm-4 col-xs-12 menus js-menus packUp">
-					<div class="heder-close">
-						<div class="row">
-							<div class="col-xs-12 text-right">
-								<i class="fa fa-close close-menu" ng-click="hideMenu()"></i>
-							</div>
-						</div>
-					</div>
-					<ul class="menu-lists">
-						<li ng-repeat="menu in menus track by $index" class="js-{{menu.className}}">
-							<a href="{{::menu.href}}" class="">
-								<i class="{{::menu.icon}}"></i>
-								<span>{{::menu.name}}</span>
-							</a>
-						</li>
+			<div class="col-xs-4 text-center">
+				<img src="/dist/images/logo.png" alt="logo" class="logo" />
+			</div>
+			<div class="col-xs-4 text-right">
+				<!-- 将下拉菜单触发器和下拉菜单都包裹在 .dropdown里，或者另一个声明了position：relative的元素。
+				原因是dropdown-menu元素设定了position:absolute，且top：100%；left:0；所以需要包裹在设定了position：relative的元素内。  -->
+				<div class="dropdown">
+					<span id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expeanded="false">
+						<img src="/dist/images/userPic.png" alt="userPic" class="userPic" />
+						<!-- <span class="caret"></span> bootstrap的下拉三角  -->
+						<span class="fa fa-chevron-down downIcon"></span>
+					</span>
+					<ul class="dropdown-menu menu-list" aria-labelledby="dLable">
+						<li><a href="#">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+							<span>Profile</span>
+						</a></li>
+						<li><a href="#">
+							<i class="fa fa-sign-out" aria-hidden="true"></i>
+							<span>Sign out</span>
+						</a></li>
 					</ul>
-					<div class="history">
-						<h3 class="history-title">
-							History
-						</h3>
-						<ul class="history-list">
-							<li ng-repeat="item in history track by $index">
-								<i class="fa fa-circle circleIcon"></i>
-								<span>{{item}}</span>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-				<div class="col-md-9 col-sm-12 col-xs-12 contents">
-					<div class="ui-view">
-
-					</div>
 				</div>
 			</div>
 		</div>
-	</body>
+	</div>
+</div>
+<!-- .container 类用于固定宽度并支持响应式布局的容器。  -->
+<div class="container content">
+	<div class="row">
+		<div class="col-md-3 col-sm-4 col-xs-12">
+			<div class="heder-close">
+				<div class="row">
+					<div class="col-xs-12 test-right">
+						<i class="fa fa-close close-menu" ng-click="hideMenu()"></i>
+					</div>
+				</div>
+			</div>
+			<ul class="menu-lists">
+				<li ng-repeat="menu in menus track by $index" class="js-{{menu.className}}">
+					<a href="{{::menu.href}}" class="">
+						<i class="{{::menu.icon}}"></i>
+						<span>{{::menu.name}}</span>
+					</a>
+				</li>
+			</ul>
+			<div class="history">
+				<h3 class="history-title">
+					History
+				</h3>
+				<ul class="history-list">
+					<li ng-repeat="item in history track by $index">
+						<i class="fa fa-circle circleIcon"></i>
+						<span>{{item}}</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-9 col-sm-12 col-xs-12 contents">
+			<div class="ui-view">
+				
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
 </html>

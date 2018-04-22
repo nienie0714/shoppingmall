@@ -1,0 +1,228 @@
+.agent-module {
+	padding-top: 10px;
+	.build, .idle, .statistic, .statistic-mobile {
+		height: 132px;
+	}
+	.build {
+		background: @color-yellow;
+		color: @color-white;
+		padding: 20px 10px;
+	}
+	.idle {
+		background: @color-green;
+		color: @color-white;
+		padding: 20px 10px;
+	}
+	.statistic {
+		background: @color-white;
+		color: #000;
+		padding: 20px;
+		@media (max-width: @mobile) {
+			display: none;
+		}
+	}
+	.statistic-mobile {
+		background: @color-white;
+		color: #000;
+		padding: 20px;
+		display: none;
+		@media (max-width: @mobile) {
+			display: block;
+			margin-top: 10px;
+		}
+	}
+	.title-name {
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.server-number {
+		font-size: 48px;
+	}
+	.countName {
+		font-size: 12px;
+	}
+	.countNum {
+		font-size: 20px;
+		margin-bottom: 5px;
+		@media (max-width: @mobile) {
+			margin-top: 35px;
+		}
+	}
+	.menuHeadAll {
+		height: 50px;
+		background: @color-white;
+		margin-top: 10px;
+	}
+	.menuHead {
+		display: flex;
+		width: 33%;
+		font-size: 12px;
+		line-height: 50px;
+		float: left;
+		span {
+			flex: 1;
+			border-right: 1px solid #ccc;
+			border-bottom: 3px solid transparent;
+			text-align: center;
+			cursor: pointer;
+			@media (max-width: @mobile) {
+				&:last-child {
+					border-right: none;
+				}
+			}
+			&:hover, &.active{
+				border-bottom: 3px solid @color-blue;
+				color: @color-blue;
+				background: #efefef;
+			}
+		}
+		@media (max-width: @mobile) {
+			width: 100%
+		}
+	}
+	.search {
+		float: left;
+		height: 50px;
+		line-height: 50px;
+		background: @color-white;
+		position: relative;
+		padding-left: 30px;
+		padding-right: 10px;
+		width: 33%;
+		@media (max-width: @mobile) {
+			display: none;
+		}
+		input {
+			position: absolute;
+			height: 30px;
+			border: 1px solid #ccc;
+			background: #efefef;
+			width: 100%;
+			top: 10px;
+			padding-left: 30px;
+			outline: none;
+		}
+		i {
+			position: absolute;
+		    left: 40px;
+		    top: 18px;
+		    z-index: 1;
+		}
+	}
+	.view {
+		width: 34%;
+		float: left;
+		text-align: right;
+		line-height: 50px;
+		i {
+			font-size: 20px;
+			margin-right: 15px;
+			cursor: pointer;
+			&.active {
+				color: @color-blue;
+			}
+		}
+		@media (max-width: @tablet) {
+			display: none;
+		}
+	}
+	.searchMobile {
+		display: none;
+		@media (max-width: @mobile) {
+			display: block;
+			height: 50px;
+			margin-top: 10px;
+			.search {
+				float: none;
+				display: block;
+				width: 100%;
+				padding-left: 10px;
+				i {
+					left: 24px;
+				}
+				input {
+					width: calc(~"100% - 20px");
+					padding-left: 40px;
+				}
+			}
+		}
+	}
+	.list {
+		background: @color-white;
+		margin-top: 10px;
+		margin-left: 0;
+    	margin-right: 0;
+    	min-height: 85px;
+    	padding-top: 10px;
+    	padding-bottom: 10px;
+    	.grey {
+    		color: #999;
+    		margin-right: 10px;
+    		display: inline-block;
+    		width: 10px;
+    	}
+    	.blue {
+    		color: @color-blue;
+    		margin-right: 20px;
+    	}
+    	.size {
+    		font-size: 14px;
+    	}
+    	.status {
+    		padding: 2px 10px;
+    		color: @color-white;
+    		display: inline-block;
+    		vertical-align: middle;
+    		&.idle-status {
+    			background: @color-green;
+    		}
+    		&.build-status {
+    			background: @color-yellow;
+    		}
+    		@media (max-width: @mobile) {
+    			display: none;
+    		}
+    	}
+    	.nextRow {
+    		@media (max-width: @mobile) {
+    			margin-top: 10px;
+    		} 
+    		margin-top: 20px;
+    	}
+    	.add {
+    		color: @color-blue;
+		    font-size: 26px;
+		    margin-right: 10px;
+		    display: inline-block;
+		    vertical-align: middle;
+		    &:hover {
+		    	color: #01869a;
+		    }
+    	}
+    	.delete {
+    		display: inline-block;
+    		padding: 2px 10px;
+    		background: #efefef;
+    		vertical-align: middle;
+    		margin-right: 10px;
+    		i {
+    			cursor:pointer;
+    		}
+    	}
+    	.delete-name {
+    		margin-right: 10px;
+    	}
+    	.deney {
+    		color: @color-white;
+    		display: inline-block;
+    		padding: 5px 10px;
+    		cursor: pointer;
+    	}
+	}
+	.selectSever {
+		width: 100%;
+		height: 35px;
+		padding-left: 10px;
+		outline: none;
+	}
+}

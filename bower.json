@@ -1,0 +1,17 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "authors": "Rory Wu",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular-mocks": "^1.5.9",
+    "font-awesome-less": "^0.1.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "^1.0.6"
+  }
+}

@@ -1,0 +1,123 @@
+
+<div class="agent-module">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        	<span aria-hidden="true" class="closeIcon">&times;</span>
+	        </button>
+	        <h4 class="modal-title" id="myModalLabel">Separate multiple resource name with commas</h4>
+	      </div>
+	      <div class="modal-body">
+	        <input type="text" class="selectSever" ng-model="newBrowers" placeholder="Input Value" />
+	      </div>
+	      <div class="modal-footer">
+	      	<button type="button" class="btn btn-primary save" ng-click="saveBrowers()">Add Rescources</button>
+	        <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6 col-sm-4 col-md-4">
+			<div class="build">
+				<div class="title text-left title-name">{{build.name}}</div>
+				<div class="num text-right server-number">{{build.number}}</div>
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-4 col-md-4">
+			<div class="idle">
+				<div class="title text-left title-name">{{idle.name}}</div>
+				<div class="num text-right server-number">{{idle.number}}</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4">
+			<div class="statistic">
+				<div class="row">
+					<div class="col-xs-6 text-left countName">{{::count.name}}</div>
+					<div class="col-xs-6 text-right countNum">{{count.number}}</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 text-left countName">{{::physical.name}}</div>
+					<div class="col-xs-6 text-right countNum">{{physical.number}}</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 text-left countName">{{::virtual.name}}</div>
+					<div class="col-xs-6 text-right countNum">{{virtual.number}}</div>
+				</div>
+			</div>
+			<div class="statistic-mobile">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="countName text-center">{{::count.name}}</div>
+						<div class="countNum text-center">{{count.number}}</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="countName text-center">{{::physical.name}}</div>
+						<div class="countNum text-center">{{physical.number}}</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="countName text-center">{{::virtual.name}}</div>
+						<div class="countNum text-center">{{virtual.number}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 searchMobile">
+			<div class="search">
+				<i class="fa fa-search"></i>
+				<input type="text" name="search" ng-model="searchTarget"/>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="menuHeadAll">
+				<div class="menuHead">
+					<span ng-repeat="item in selects" class="{{$index === 0 ? 'active' : ''}}" ng-click="select(item, $event)">{{::item}}</span>
+					<!-- <span class="active">All</span>
+					<span>Physical</span>
+					<span>Virtual</span> -->
+				</div>
+				<div class="search">
+					<i class="fa fa-search"></i>
+					<input type="text" name="search" ng-model="searchTarget"/>
+				</div>
+				<div class="view">
+					<i class="fa fa-th"></i>
+					<i class="fa fa-th-list active"></i>		
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="list row" ng-repeat="item in renderData | filter: searchTarget track by $index" ng-init="outerIndex = $index;">
+		<div class="col-sm-6 size">
+			<i class="fa fa-tv grey"></i>
+			<span class="blue">{{item.address}}</span>
+			<span class="status {{item.status===0 ? 'idle-status' : 'build-status'}}">{{item.status===0 ? 'idle' : 'building'}}</span>
+		</div>
+		<div class="col-sm-3 size">
+			<i class="fa fa-info grey"></i>
+			<span>{{item.ip}}</span>
+		</div>
+		<div class="col-sm-3 size">
+			<i class="fa fa-folder-o grey"></i>
+			<span>{{item.dir}}</span>
+		</div>
+		<div class="col-sm-10 nextRow">
+			<i class="fa fa-plus-square add" data-toggle="modal" data-target="#myModal" ng-click="showModal(item.sId)"></i>
+			<span class="delete" ng-repeat="browser in item.browser track by $index">
+				<span class="delete-name">{{browser}}</span> 
+				<i class="fa fa-trash-o" ng-click="delete(item.sId, $index)"></i>
+			</span>
+		</div>
+		<div class="col-sm-2 text-right nextRow" ng-show="item.status">
+			<span class="deney blue-style">
+				<i class="fa fa-ban"></i>
+				<span>Deney</span>
+			</span>
+		</div>
+	</div>
+</div>

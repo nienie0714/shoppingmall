@@ -1,0 +1,166 @@
+body {
+	background: @color-bg;
+	font-family: Avenir,Helvetica,Arial,sans-serif;
+}
+.header {
+	height: 60px;
+	box-shadow: 0px 1px 5px #ccc;
+	line-height: 60px;
+	background: @color-white;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	@media (max-width: @tablet) {
+		z-index: 10;
+	}
+}
+.container-device {
+	@media (max-width: @tablet) {
+		width: 100%;
+	}
+}
+.menu-icon {
+	display: none;
+	@media (max-width: @tablet) {
+		font-size: 20px;
+		color: #999;
+		cursor: pointer;
+		display: inline-block;
+	}
+}
+#dLabel {
+	cursor: pointer;
+}
+.dropdown {
+	.downIcon {
+		color: #999;
+	}
+	.menu-list {
+		right: 0;
+	    width: 160px;
+	    left: auto;	
+	    i {
+	    	margin-right: 5px;
+	    }
+	}
+}
+.content {
+	@media (max-width: @tablet){
+		width: 100%;
+	}
+}
+.close-menu {
+	color: @color-blue;
+	cursor: pointer;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-right: 20px;
+}
+.logo {
+	width: 100px;
+}
+.userPic {
+	width: 50px;
+}
+.menus {
+	background: @color-grey;
+	height: 100vh;
+	padding-left: 0;
+	padding-right: 0;
+	transition: all 0.3s;
+	overflow: hidden;
+	@media (max-width: @tablet) {
+		z-index: 20;
+	} 
+	&.packUp {
+		@media (max-width: @tablet) {
+			width: 0;
+
+		}
+	}
+	.heder-close {
+		height: 60px;
+		visibility: hidden;
+		@media (max-width: @tablet) {
+			visibility: visible;
+		}
+	}
+	.menu-lists {
+		padding-top: 20px;
+		padding-left: 0;
+		li {
+			height: 45px;
+			line-height: 45px;
+			list-style: none;
+			&:hover, &.active {
+				background: @color-grey-hover;
+				color: @color-blue;
+				a {
+					color: @color-blue;
+				}
+			}
+		}
+		a {
+			color: @color-white;
+			font-size: @font-14;
+			display: inline-block;
+		    width: 100%;
+		    padding-left: 50px;
+			&:link {
+				text-decoration: none;
+			}
+			&:hover {
+				text-decoration: none;
+			}
+			&:visited {
+				text-decoration: none;
+			}
+			span {
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 10px;
+			}
+			
+		}
+	}
+
+}
+.contents {
+	margin-top: 60px;
+	z-index: auto;
+	@media (max-width: @tablet) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+}
+.history {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 30vh;
+	.history-title {
+		font-size: 24px;
+		color: #ccc;
+	}
+	.history-list {
+		width: calc(~"100% - 20px");
+		color: #999;
+		font-size: 12px;
+		padding-left: 0;
+		li {
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			list-style: none;    
+			margin-bottom: 5px;
+		}
+		.circleIcon {
+			font-size: 14px;
+    		transform: scale(0.4);
+    		margin-right: 15px;
+		}
+	}
+}
+

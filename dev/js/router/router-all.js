@@ -22,10 +22,10 @@ angular.module('app')
                 templateUrl: rootPath + 'product.html',
                 controller: 'product'
             })
-            .state('help', {
-                url: '/help',
-                templateUrl: rootPath + 'product.html',
-                controller: 'help'
+            .state('book', {
+                url: '/book',
+                templateUrl: rootPath + 'home.html',
+                controller: 'book'
             });
 
     }]);

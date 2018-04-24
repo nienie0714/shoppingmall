@@ -28,8 +28,8 @@ angular.module('app', ['ui.router'])
 			{
 				icon: 'fa fa-life-buoy',
 				name: 'BOOK STORE',
-				href: '#!/help',
-				className: 'help'
+				href: '#!/book',
+				className: 'book'
 			}
 		]
 		/*showMenu: function() {
@@ -39,6 +39,7 @@ angular.module('app', ['ui.router'])
 			$('.js-menus').addClass('packUp');
 		}*/
 	};
+	rootScope.type = '1';
 	$rootScope = angular.extend($rootScope, rootScope);
 	historyModel.getHistory().then(function(res) {
 		if (res.status === 200) {

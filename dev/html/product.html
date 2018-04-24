@@ -1,28 +1,15 @@
 <div class="product-module">
-	<!-- Building {{model}}!
+	<!-- Building {{model}}! -->
 	<div>GLASSES TYPE
 		<ul class="glasses-type">
-			<li>
-				{{model}}
+			<li ng-repeat="type in glassestype track by $index">
+				<h4>{{type.name}}</h4>
 			</li>
 		</ul>
-	</div> -->
+	</div>
 	<ul class="product">
-		<li><img src="/dist/images/g1.jpg" alt="" ></li>
-		<li><img src="/dist/images/g2.jpg" alt=""></li>
-		<li><img src="/dist/images/g3.jpg" alt=""></li>
-		<li><img src="/dist/images/g4.jpg" alt=""></li>
-		<li><img src="/dist/images/g5.jpg" alt=""></li>
-		<li><img src="/dist/images/g6.jpg" alt=""></li>
-		<li><img src="/dist/images/g1.jpg" alt=""></li>
-		<li><img src="/dist/images/g2.jpg" alt=""></li>
-		<li><img src="/dist/images/g3.jpg" alt=""></li>
-		<li><img src="/dist/images/g4.jpg" alt=""></li>
-		<li><img src="/dist/images/g1.jpg" alt=""></li>
-		<li><img src="/dist/images/g2.jpg" alt=""></li>
-		<li><img src="/dist/images/g3.jpg" alt=""></li>
-		<li><img src="/dist/images/g4.jpg" alt=""></li>
-		<li><img src="/dist/images/g5.jpg" alt=""></li>
-		<li><img src="/dist/images/g6.jpg" alt=""></li>
+		<li ng-repeat="item in pictures | test: type track by $index">
+			<img ng-src="{{item.img}}" alt="" />
+		</li>
 	</ul>
 </div>

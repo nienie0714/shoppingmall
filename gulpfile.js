@@ -26,6 +26,7 @@ var paths = {
 	  },
 	  libs: {
 	    src: 'bower_components/',
+      lib: 'dev/lib/'
 	  },
 	  less: {
 	    src: 'dev/less',
@@ -55,7 +56,8 @@ var files = {
       paths.libs.src + 'jquery/dist/jquery.min.js',
       paths.libs.src + 'bootstrap/dist/js/bootstrap.min.js',
      	paths.libs.src + 'angular/angular.min.js',
-      paths.libs.src + 'angular-ui-router/release/angular-ui-router.min.js'
+      paths.libs.src + 'angular-ui-router/release/angular-ui-router.min.js',
+      paths.libs.lib + 'pie-chart.js'
     ],
     exclude: [
       

@@ -10,6 +10,83 @@
     <script src="/dist/js/vendor.js"></script>
     <script src="/dist/js/function.js"></script>
 </head>
+
+<body ng-controller="appController">
+    <div class="page-container">
+        <!-- content  -->
+        <div class="left-content">
+            <!-- header -->
+            <div class="header-section">
+                <div class="top_bg">
+                    <div class="header_top">
+                        <div class="top_left">
+                            <ul>
+                                <li><a href="contact.html">help</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="checkout.html">Delivery information</a></li>
+                            </ul>
+                        </div>
+                        <div class="top_right">
+                            <ul>
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- checkout shopping  -->
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html"><img src="./dist/images/logo.png" class="img-responsive" alt=""> </a>
+                </div>
+                <div class="header_right">
+                    <div class="cart box_1">
+                        <a href="#">CHECKOUT YOUR ORDER :</a>
+                        <span>$0.00</span> (<span>0</span> items)<img class="car" src="./dist/images/bag.png" alt=""></span>
+                    </div>
+                    <div class="search">
+                        <input type="text" value="" placeholder="search...">
+                        <img src="./dist/images/search.png" alt="">
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <!-- content  -->
+            <div class="center-contents">
+                <div class="ui-view"></div>
+            </div>
+        </div>
+        <!-- sidebar -->
+        <div class="sidebar-menu container contents">
+            <div class="menus js-menus">
+                <ul class="menu-lists">
+                    <li ng-repeat="menu in menus track by $index" class="js-{{menu.className}}">
+                        <a href="{{::menu.href}}" class="">
+	                        <i class="{{::menu.icon}}"></i>
+	                        <span>{{::menu.name}}</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="history">
+                    <h3 class="history-title">
+                            好物推荐
+                    </h3>
+                    <ul class="history-list">
+                        <li ng-repeat="item in history track by $index">
+                            <i class="fa fa-circle circleIcon"></i>
+                            <span>{{item}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</body>
+<!-- 
 	<body ng-controller="appController">
 		<div class="header">
 			<div class="container container-device">
@@ -26,7 +103,7 @@
 						<div class="dropdown">
 							<span id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							    <img src="/dist/images/userPic.png" alt="name" class="userPic" />
-							    <!-- <span class="caret"></span> -->
+							    <span class="caret"></span>
 							    <i class="fa fa-chevron-down downIcon"></i>
 							</span>
 							<ul class="dropdown-menu menu-list" aria-labelledby="dLabel">
@@ -36,8 +113,7 @@
 										<span>Profile</span>
 							    	</a>
 							    </li>
-							    <li>
-							    	<a href="#">
+							    <li>					    	<a href="#">
 										<i class="fa fa-sign-out"></i>
 										<span>Sign Out</span>
 							    	</a>
@@ -88,4 +164,6 @@
 			</div>
 		</div>
 	</body>
+ -->
+
 </html>

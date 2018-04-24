@@ -7,25 +7,25 @@ angular.module('app')
         var rootPath = '/dist/html/';
         $urlRouterProvider.otherwise('/');
         $stateProvider
-       		 .state('dashboard', {
-                url: '/dashboard',
-                templateUrl: rootPath + 'dashboard.html',
-                controller: 'dashboard'
+            .state('home', {
+                url: '/home',
+                templateUrl: rootPath + 'home.html',
+                controller: 'home'
             })
             .state('agent', {
                 url: '/agent',
                 templateUrl: rootPath + 'agent.html',
                 controller: 'agent'
             })
-            .state('cruise', {
-                url: '/cruise',
-                templateUrl: rootPath + 'dashboard.html',
-                controller: 'cruise'
+            .state('product', {
+                url: '/product',
+                templateUrl: rootPath + 'product.html',
+                controller: 'product'
             })
             .state('help', {
                 url: '/help',
-                templateUrl: rootPath + 'dashboard.html',
+                templateUrl: rootPath + 'product.html',
                 controller: 'help'
             });
-            
+
     }]);

@@ -9,35 +9,35 @@ angular.module('app', ['ui.router'])
 		menus: [
 			{
 				icon: 'fa fa-dashboard',
-				name: 'DASHBOARD',
-				href: '#!/dashboard',
-				className: 'dashboard'
+				name: 'HOME',
+				href: '#!/home',
+				className: 'home'
 			},
 			{
 				icon: 'fa fa-share-alt',
-				name: 'AGENT',
+				name: 'SUPER MARKET',
 				href: '#!/agent',
 				className: 'agent'
 			},
 			{
 				icon: 'fa fa-train',
-				name: 'MY CRUISE',
-				href: '#!/cruise',
-				className: 'cruise'
+				name: 'ENTRY LUX',
+				href: '#!/product',
+				className: 'product'
 			},
 			{
 				icon: 'fa fa-life-buoy',
-				name: 'Help',
+				name: 'BOOK STORE',
 				href: '#!/help',
 				className: 'help'
 			}
-		],
-		showMenu: function() {
+		]
+		/*showMenu: function() {
 			$('.js-menus').removeClass('packUp');
 		},
 		hideMenu: function() {
 			$('.js-menus').addClass('packUp');
-		}
+		}*/
 	};
 	$rootScope = angular.extend($rootScope, rootScope);
 	historyModel.getHistory().then(function(res) {

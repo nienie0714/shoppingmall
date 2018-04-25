@@ -3,7 +3,7 @@
  */
 'use strict';
 angular.module('app')
-    .controller('product', ['$scope', 'current', function($scope, current) {
+    .controller('glasses', ['$scope', 'current', function($scope, current) {
         // ?
         current();
         $scope.model = 'Product';
@@ -53,12 +53,25 @@ angular.module('app')
                 type: '5'
             }
         ];
+        $scope.type = '';
         $scope.glassestype = [
-            { name: '太阳镜', id: '1' },
-            { name: '防辐射', id: '2' },
-            { name: '眼镜太', id: '3' },
-            { name: '光学镜', id: '4' },
-            { name: '装饰眼镜', id: '5' },
-            { name: '老花镜', id: '6' }
+            { name: '所有', id: '', className: 'active' },
+            { name: '太阳镜', id: '1', className: '' },
+            { name: '防辐射眼镜', id: '2', className: ''},
+            { name: '光学镜', id: '3', className: ''},
+            { name: '游泳镜', id: '4', className: ''},
+            { name: '装饰眼镜', id: '5', className: '' },
+            { name: '老花镜', id: '6', className: '' }
         ];
+        $scope.select = function(index, id) {
+            $scope.glassestype.forEach(function(item, i) {
+                if (index === i) {
+                    item.className = 'active';
+                } else {
+                    item.className = '';
+                }
+            });
+            $scope.type = '' + id;
+        };
+
     }]);

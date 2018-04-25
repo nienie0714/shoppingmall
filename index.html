@@ -65,6 +65,7 @@
             <div class="menus js-menus">
                 <ul class="menu-lists">
                     <li ng-repeat="menu in menus track by $index" class="js-{{menu.className}}">
+                        <!-- ng-class="item.isactive" ng-click="selectmenu($index)" -->
                         <a href="{{::menu.href}}" class="">
 	                        <i class="{{::menu.icon}}"></i>
 	                        <span>{{::menu.name}}</span>
@@ -73,7 +74,7 @@
                 </ul>
                 <div class="history">
                     <h3 class="history-title">
-                            好物推荐
+                           LOOK HERE!
                     </h3>
                     <ul class="history-list">
                         <li ng-repeat="item in history track by $index">

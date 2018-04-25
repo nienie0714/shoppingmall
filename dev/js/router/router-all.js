@@ -17,15 +17,15 @@ angular.module('app')
                 templateUrl: rootPath + 'agent.html',
                 controller: 'agent'
             })
-            .state('product', {
-                url: '/product',
-                templateUrl: rootPath + 'product.html',
-                controller: 'product'
+            .state('glasses', {
+                url: '/glasses',
+                templateUrl: rootPath + 'glasses.html',
+                controller: 'glasses'
             })
-            .state('book', {
-                url: '/book',
-                templateUrl: rootPath + 'home.html',
-                controller: 'book'
+            .state('shoes', {
+                url: '/shoes',
+                templateUrl: rootPath + 'shoes.html',
+                controller: 'shoes'
             });
 
     }]);

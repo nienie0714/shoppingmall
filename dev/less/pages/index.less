@@ -154,7 +154,7 @@ h3.inner {
                     line-height: 1.5em;
                     position: relative;
                     font-size: 0.8725em;
-                    text-transform: capitalize;
+                    /* text-transform: capitalize; */
                     &:visited, &:hover, &:active {
                         background: #ffffff;
                     }
@@ -211,8 +211,13 @@ h3.inner {
                 display: block;
                 width: 100%;
                 padding-left: 30px;
-                &:hover,
-                &:visited {
+                &:hover{
+                    text-decoration: none;
+                    background-color: #252525;
+                    border-left: 4px solid #4A4A4A;
+                    transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+                }
+                &.menuactive {
                     text-decoration: none;
                     background-color: #252525;
                     border-left: 4px solid #4A4A4A;

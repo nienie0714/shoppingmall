@@ -1,39 +1,12 @@
 <div class="product-module">
-    <!-- Building {{model}}! -->
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">GLASSES TYPE</a>
-            </div>
-            <div>
-                <ul class="nav navbar-nav">
-                    <li ng-repeat="item in glassestype track by $index" ng-class="item.className" ng-click="select($index, item.id)">
-                        <a>{{item.name}}</a>
-                    </li>
-                    <!-- <li class="active"><a href="#">iOS</a></li> -->
-                    <!-- <lnavbari class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                Java<b class="caret"></b>
-                                            </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">jmeter</a></li>
-                            <li><a href="#">EJB</a></li>
-                            <li><a href="#">Jasper Report</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">分离的链接</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">另一个分离的链接</a></li>
-                        </ul>
-                    </li> -->
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- <ul class="product">
-        <li ng-repeat="item in pictures | test: type track by $index">
-            <img ng-src="{{item.img}}" alt="" />
-        </li>
-    </ul> -->
+    <div class="navbreadcrumb">
+        <span>GLASSES TYPE</span>
+        <ul>
+            <li ng-repeat="item in producttype track by $index" ng-class="item.className" ng-click="select($index, item.id)">
+                <a>{{item.name}}</a>
+            </li>
+        </ul>
+    </div>
     <div class="women_main">
         <div class="w_content">
             <div class="women">
@@ -49,16 +22,26 @@
                 <div class="clearfix"></div>
             </div>
             <div class="grids_img">
-                <div class="grid1" ng-repeat="item in pictures | test: type track by $index">
+                <div class="grid1" ng-repeat="item in pictures | test: type track by $index" >
                     <div class="content_box">
-                        <a href="">
+                        <a href="/#!/details/{{kind}}/{{item.type}}">
                             <img src="{{item.img}}" class="grids_img" alt="">
                         </a>
-                        <h4><a href="">Adidas autem</a></h4>
+                        <h4>
+                            <a href="/#!/details/{{kind}}/{{item.type}}">Adidas autem</a>
+                        </h4>
                         <p>It is a long established fact that</p>
                         <div class="grid_1 simpleCart_shelfItem">
-                            <div class="item_add"><span class="item_price"><h6>ONLY $109.00</h6></span></div>
-                            <div class="item_add"><span class="item_price"><a href="">add to cart</a></span></div>
+                            <div class="item_add">
+                                <span class="item_price">
+                                    <h6>ONLY $109.00</h6>
+                                </span>
+                            </div>
+                            <div class="item_add">
+                                <span class="item_price">
+                                    <a href="/#!/details/{{kind}}/{{item.type}}">add to cart</a>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

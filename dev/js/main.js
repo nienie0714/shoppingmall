@@ -3,7 +3,7 @@
  */
 'use strict';
 angular.module('app', ['ui.router'])
-    .controller('appController', ['$rootScope', 'historyModel', function($rootScope, historyModel) {
+    .controller('appController', ['$rootScope', 'historyModel', '$scope', function($rootScope, historyModel, $scope) {
         $rootScope.rootPath = '/dist';
         var rootScope = {
             menus: [{
@@ -15,9 +15,9 @@ angular.module('app', ['ui.router'])
                 },
                 {
                     icon: 'fa fa-share-alt',
-                    name: 'SUPER MARKET',
-                    href: '#!/agent',
-                    className: 'agent',
+                    name: 'BAGS',
+                    href: '#!/bags',
+                    className: 'bags',
                     isactive: ''
                 },
                 {
@@ -33,6 +33,13 @@ angular.module('app', ['ui.router'])
                     href: '#!/shoes',
                     className: 'shoes',
                     isactive: ''
+                },
+                {
+                    icon: 'fa fa-life-buoy',
+                    name: 'details',
+                    href: '#!/details',
+                    className: 'details',
+                    isactive: ''
                 }
             ]
             /*showMenu: function() {
@@ -43,19 +50,23 @@ angular.module('app', ['ui.router'])
             }*/
         };
         $rootScope = angular.extend($rootScope, rootScope);
-        /*$scope.selectmenu = function(index) {
-            $scope.glassestype.forEach(function(item, i) {
+        $scope.selectmenu = function(index, id) {
+            $scope.menus.forEach(function(item, i) {
                 if (index === i) {
-                    item.className = 'active';
+                    item.isactive = 'menuactive';
                 } else {
-                    item.className = '';
+                    item.isactive = '';
                 }
             });
-        };*/
+        };
         historyModel.getHistory().then(function(res) {
             if (res.status === 200) {
                 var data = res.data.data;
                 $rootScope.history = data;
             }
+        });
+        // 监听搜索 值
+        $scope.$watch('type', function(newVal, oldVal) {
+            $scope.$broadcast('type', newVal);
         });
     }]);

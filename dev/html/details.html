@@ -1,0 +1,23 @@
+<div class="product-module">
+    <!-- Building {{model}}! -->
+    <ul class="breadcrumb">
+        <li>
+            <a href="">奢侈品</a>
+        </li>
+        <li>
+            <a href="">箱包Tutorials</a>
+        </li>
+        <li>
+            <a href="">Tutorials</a>
+        </li>
+        <li class="active">SAKUN中性款黑色猫型双肩背包</li>
+    </ul>
+    <div class="women_main">
+        <div class="clearfix">
+            <div ng-repeat="item in product track by $index" style="float:left;">
+                <img ng-src="{{item.img}}" alt="product" />
+                <span>type: {{item.type}}</span>
+            </div>
+        </div>
+    </div>
+</div>

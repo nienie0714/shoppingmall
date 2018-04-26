@@ -12,10 +12,10 @@ angular.module('app')
                 templateUrl: rootPath + 'home.html',
                 controller: 'home'
             })
-            .state('agent', {
-                url: '/agent',
-                templateUrl: rootPath + 'agent.html',
-                controller: 'agent'
+            .state('bags', {
+                url: '/bags',
+                templateUrl: rootPath + 'bags.html',
+                controller: 'bags'
             })
             .state('glasses', {
                 url: '/glasses',
@@ -26,6 +26,11 @@ angular.module('app')
                 url: '/shoes',
                 templateUrl: rootPath + 'shoes.html',
                 controller: 'shoes'
+            })
+            .state('details', {
+                url: '/details/{kind}/{type}',
+                templateUrl: rootPath + 'details.html',
+                controller: 'details'
             });
 
     }]);

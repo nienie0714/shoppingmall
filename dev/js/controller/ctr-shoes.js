@@ -6,7 +6,20 @@ angular.module('app')
     .controller('shoes', ['$scope', 'current', function($scope, current) {
         // ?
         current();
-        $scope.model = 'Product';
+        var maps = {
+            aj1 : '1',
+            aj2 : '2',
+            aj3 : '3',
+            aj4 : '4',
+            aj5 : '5',
+            aj6 : '6'
+        };
+        $scope.$on('type', function(e, val) {
+            val = val.toLowerCase();
+            val = maps[val];  //  动态获取对象属性
+            $scope.type = val;
+        });
+        $scope.kind = '2';
         $scope.pictures = [
         	{
                 img: 'dist/images/s1.jpg',
@@ -54,7 +67,7 @@ angular.module('app')
             }
         ];
         $scope.type = '';
-        $scope.glassestype = [
+        $scope.producttype = [
             { name: '所有', id: '', className: 'active' },
             { name: 'AJ1', id: '1', className: '' },
             { name: 'AJ2', id: '2', className: ''},
@@ -64,7 +77,7 @@ angular.module('app')
             { name: 'AJ6', id: '6', className: '' }
         ];
         $scope.select = function(index, id) {
-            $scope.glassestype.forEach(function(item, i) {
+            $scope.producttype.forEach(function(item, i) {
                 if (index === i) {
                     item.className = 'active';
                 } else {
@@ -73,5 +86,4 @@ angular.module('app')
             });
             $scope.type = '' + id;
         };
-
     }]);

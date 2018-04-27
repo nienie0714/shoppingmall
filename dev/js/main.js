@@ -33,13 +33,6 @@ angular.module('app', ['ui.router'])
                     href: '#!/shoes',
                     className: 'shoes',
                     isactive: ''
-                },
-                {
-                    icon: 'fa fa-life-buoy',
-                    name: 'details',
-                    href: '#!/details',
-                    className: 'details',
-                    isactive: ''
                 }
             ]
             /*showMenu: function() {

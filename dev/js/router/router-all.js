@@ -5,7 +5,7 @@
 angular.module('app')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         var rootPath = '/dist/html/';
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/home');
         $stateProvider
             .state('home', {
                 url: '/home',
@@ -28,7 +28,7 @@ angular.module('app')
                 controller: 'shoes'
             })
             .state('details', {
-                url: '/details/{kind}/{type}',
+                url: '/details/:kind/{type}',
                 templateUrl: rootPath + 'details.html',
                 controller: 'details'
             });

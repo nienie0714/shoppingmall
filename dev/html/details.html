@@ -5,19 +5,121 @@
             <a href="">奢侈品</a>
         </li>
         <li>
-            <a href="">箱包Tutorials</a>
+            <a href="">{{productType}}</a>
         </li>
         <li>
             <a href="">Tutorials</a>
         </li>
         <li class="active">SAKUN中性款黑色猫型双肩背包</li>
     </ul>
+    <!--content-->
     <div class="women_main">
-        <div class="clearfix">
-            <div ng-repeat="item in product track by $index" style="float:left;">
-                <img ng-src="{{item.img}}" alt="product" />
-                <span>type: {{item.type}}</span>
+        <div class="row details">
+            <!--<div class="det">
+                 <div class="single_left">
+                    <div class="grid images_3_of_2">
+                        <div class="flexslider"  ng-repeat="item in product track by $index">
+                            <! FlexSlider >
+                            <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                                <ul class="slides" style="width: 1200%; transition-duration: 0.6s; transform: translate3d(-864px, 0px, 0px);">
+                                    <li data-thumb="./dist/images/g4.jpg" class="clone" aria-hidden="true" style="width: 288px; float: left; display: block;">
+                                        <div class="thumb-image"> <img ng-src="{{item.img}}" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
+                                    </li>
+                                    <li data-thumb="./dist/images/g4.jpg" class="" style="width: 288px; float: left; display: block;">
+                                        <div class="thumb-image"> <img ng-src="{{item.img}}" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
+                                    </li>
+                                    <li data-thumb="./dist/images/g4.jpg" style="width: 288px; float: left; display: block;" class="">
+                                        <div class="thumb-image"> <img ng-src="{{item.img}}" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
+                                    </li>
+                                    <li data-thumb="./dist/images/g4.jpg" style="width: 288px; float: left; display: block;" class="flex-active-slide">
+                                        <div class="thumb-image"> <img ng-src="{{item.img}}" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="flex-direction-nav">
+                                <li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
+                                <li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
+                            </ul>
+                        </div>
+                    </div> -->
+            <div class="det col-xs-12 col-sm-8 col-md-6" ng-repeat="item in product track by $index">
+                <div class="det_big">
+                    <img ng-src="{{item.img}}" alt="product" />
+                </div>
+                <ul class="det_small">
+                    <li><img ng-src="{{item.img}}" alt="product" /></li>
+                    <li><img ng-src="{{item.img}}" alt="product" /></li>
+                    <li><img ng-src="{{item.img}}" alt="product" /></li>
+                    <li><img ng-src="{{item.img}}" alt="product" /></li>
+                </ul>
             </div>
+            <div class="det_nav col-xs-12 col-sm-8 col-md-6">
+                <h3>SAKUN 中性款黑色猫型双肩背包 AEB001 99FRE</h3>
+                <span class="brand">Brand: <a href="">Sed do eiusmod </a></span>
+                <br>
+                <div class="price">
+                    <span class="text">Price:</span>
+                    <span class="price-new">$110.00</span>
+                    <span class="price-old">$150.00</span>
+                    <span class="price-tax">VIP PRICE: $90.00</span>
+                </div>
+                <div class="descript">
+                    <span class="text">DESCRIPT:</span>
+                    <span class="desc">猫外形防震双肩背包，包背加防震，两侧各一个口袋，正面一个拉链，猫爪上分别有一个拉链，猫头可拆卸拉链小包，包上方粘贴翻盖式开合</span>
+                </div>
+                <div class="det_nav_det">
+                    <h4>Select a size :</h4>
+                    <div class="det_size">
+                        <ul class="pro_select">
+                            <li>
+                                <label class="pro_size">
+                                    <input type="checkbox" name="checkbox">L</label>
+                            </li>
+                            <li>
+                                <label class="pro_size">
+                                    <input type="checkbox" name="checkbox">S</label>
+                            </li>
+                            <li>
+                                <label class="pro_size">
+                                    <input type="checkbox" name="checkbox">M</label>
+                            </li>
+                            <li>
+                                <label class="pro_size">
+                                    <input type="checkbox" name="checkbox">XL</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <h4>Select a color :</h4>
+                    <div class="det_color">
+                        <ul class="pro_select">
+                            <li>
+                                <label class="pro_color">
+                                    <input type="radio" name="color">RED</label>
+                            </li>
+                            <li>
+                                <label class="pro_color">
+                                    <input type="radio" name="color">GREEN</label>
+                            </li>
+                            <li>
+                                <label class="pro_color">
+                                    <input type="radio" name="color">YELLOW</label>
+                            </li>
+                            <li>
+                                <label class="pro_color">
+                                    <input type="radio" name="color">BLACK</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <ul class="buy_button">
+                    <li><a href="">BUY</a></li>
+                    <li><a href="">save in wishlist</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
         </div>
+        <div class="clearfix"></div>
     </div>
 </div>

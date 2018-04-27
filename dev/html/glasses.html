@@ -1,6 +1,7 @@
 <div class="product-module">
     <div class="navbreadcrumb">
         <span>GLASSES TYPE</span>
+        <!-- <span><img class="cart" src="./dist/images/bag.png" alt=""></span> -->
         <ul>
             <li ng-repeat="item in producttype track by $index" ng-class="item.className" ng-click="select($index, item.id)">
                 <a>{{item.name}}</a>
@@ -25,7 +26,7 @@
                 <div class="grid1" ng-repeat="item in pictures | test: type track by $index" >
                     <div class="content_box">
                         <a href="/#!/details/{{kind}}/{{item.type}}">
-                            <img src="{{item.img}}" class="grids_img" alt="">
+                            <img ng-src="{{item.img}}" class="grids_img" alt="">
                         </a>
                         <h4>
                             <a href="/#!/details/{{kind}}/{{item.type}}">Adidas autem</a>
@@ -39,7 +40,7 @@
                             </div>
                             <div class="item_add">
                                 <span class="item_price">
-                                    <a href="/#!/details/{{kind}}/{{item.type}}">add to cart</a>
+                                    <a href="">add to cart</a>
                                 </span>
                             </div>
                         </div>

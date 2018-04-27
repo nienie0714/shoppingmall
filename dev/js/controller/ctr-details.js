@@ -3,35 +3,31 @@
  */
 'use strict';
 angular.module('app')
-    .controller('details', ['$scope', 'current', '$state', 'productModel', function($scope, current, $state, model) {
-        current();
+    .controller('details', ['$scope', '$state', 'productModel', function($scope, $state, model) {
         var kind = $state.params.kind;
         var type = $state.params.type;
         $scope.product = [];
+        var maps = {
+            '1': 'GLASSES',
+            '2': 'SHOES',
+            '3': 'BAGS'
+        };
+        $scope.productType = maps[kind];
         model.getProduct(kind).then(function(res) {
             if (res.status === 200) {
-               var data = res.data.data;
-               $scope.product = data.filter(function(item) {
+                var data = res.data.data;
+                $scope.product = data.filter(function(item) {
                     return item.type === type;
-               });
-               console.log($scope.product);
+                });
+                console.log($scope.product);
+                //console.log($scope.product);
             }
         });
+        // Can also be used with $(document).ready()
+        // $(window).load(function() {
+        //     $('.flexslider').flexslider({
+        //         animation: "slide",
+        //         controlNav: "thumbnails"
+        //     });
+        // });
     }]);
-/*var app = angular.module('app');
-app.directive ("hello", function() {
-    return {
-        restrict: 'E',
-        templateUrl: '<button ng-click="asd()" style="background-color: {{col}}">click me</button>',
-        scope: {
-        	col: '=color',
-        	asd: '&ss'
-        },
-        link: function(scope, elements, attrs) {
-            elements.bind('click', function() {
-                scope.col = 'blue',
-                scope.$apply();
-            });
-        }
-    }
-});*/

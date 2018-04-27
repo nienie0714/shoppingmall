@@ -1,0 +1,36 @@
+{
+	"data": [
+    	{
+            "img": "dist/images/b1.jpg",
+            "type": "1"
+        },
+        {
+            "img": "dist/images/b2.jpg",
+            "type": "2"
+        },
+        {
+            "img": "dist/images/b3.jpg",
+            "type": "3"
+        },
+        {
+            "img": "dist/images/b4.jpg",
+            "type": "4"
+        },
+        {
+            "img": "dist/images/b5.jpg",
+            "type": "5"
+        },
+        {
+            "img": "dist/images/b6.jpg",
+            "type": "6"
+        },
+        {
+            "img": "dist/images/b7.jpg",
+            "type": "7"
+        },
+        {
+            "img": "dist/images/b8.jpg",
+            "type": "8"
+        }
+    ]
+}

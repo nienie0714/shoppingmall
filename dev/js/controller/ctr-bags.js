@@ -3,89 +3,24 @@
  */
 'use strict';
 angular.module('app')
-    .controller('bags', ['$scope', 'current', function($scope, current) {
-        // ?
-        current();
+    .controller('bags', ['$scope', 'productModel', function($scope, model) {
         var maps = {
-            b1 : '1',
-            b2 : '2',
-            b3 : '3',
-            b4 : '4',
-            b5 : '5',
-            b6 : '6',
-            b6 : '7',
-            b6 : '8'
+            b1: '1',
+            b2: '2',
+            b3: '3',
+            b4: '4',
+            b5: '5',
+            b6: '6',
+            b7: '7',
+            b8: '8'
         };
         $scope.$on('type', function(e, val) {
             /*val = val.toLowerCase();*/
             val = maps[val];  //  动态获取对象属性
             $scope.type = val;
         });
-        $scope.pictures = [
-        	{
-                img: 'dist/images/b1.jpg',
-                type: '1'
-            },
-            {
-                img: 'dist/images/b2.jpg',
-                type: '2'
-            },
-            {
-                img: 'dist/images/b3.jpg',
-                type: '3'
-            },
-            {
-                img: 'dist/images/b4.jpg',
-                type: '4'
-            },
-            {
-                img: 'dist/images/b5.jpg',
-                type: '5'
-            },
-            {
-                img: 'dist/images/b6.jpg',
-                type: '6'
-            },
-            {
-                img: 'dist/images/b7.jpg',
-                type: '7'
-            },
-            {
-                img: 'dist/images/b8.jpg',
-                type: '8'
-            },{
-                img: 'dist/images/b1.jpg',
-                type: '1'
-            },
-            {
-                img: 'dist/images/b2.jpg',
-                type: '2'
-            },
-            {
-                img: 'dist/images/b3.jpg',
-                type: '3'
-            },
-            {
-                img: 'dist/images/b4.jpg',
-                type: '4'
-            },
-            {
-                img: 'dist/images/b5.jpg',
-                type: '5'
-            },
-            {
-                img: 'dist/images/b6.jpg',
-                type: '6'
-            },
-            {
-                img: 'dist/images/b7.jpg',
-                type: '7'
-            },
-            {
-                img: 'dist/images/b8.jpg',
-                type: '8'
-            }
-        ];
+        $scope.kind = '3';
+        $scope.pictures = [];
         $scope.type = '';
         $scope.producttype = [
             { name: '所有', id: '', className: 'active' },
@@ -108,5 +43,9 @@ angular.module('app')
             });
             $scope.type = '' + id;
         };
-
+        model.getProduct('3').then(function(res) {
+            if (res.status === 200) {
+               $scope.pictures = res.data.data; 
+            }
+        });
     }]);

@@ -3,16 +3,14 @@
  */
 'use strict';
 angular.module('app')
-    .controller('shoes', ['$scope', 'current', function($scope, current) {
-        // ?
-        current();
+    .controller('shoes', ['$scope', 'productModel', function($scope, model) {
         var maps = {
-            aj1 : '1',
-            aj2 : '2',
-            aj3 : '3',
-            aj4 : '4',
-            aj5 : '5',
-            aj6 : '6'
+            aj1: '1',
+            aj2: '2',
+            aj3: '3',
+            aj4: '4',
+            aj5: '5',
+            aj6: '6'
         };
         $scope.$on('type', function(e, val) {
             val = val.toLowerCase();
@@ -20,52 +18,7 @@ angular.module('app')
             $scope.type = val;
         });
         $scope.kind = '2';
-        $scope.pictures = [
-        	{
-                img: 'dist/images/s1.jpg',
-                type: '1'
-            },
-            {
-                img: 'dist/images/s2.jpg',
-                type: '2'
-            },
-            {
-                img: 'dist/images/s3.jpg',
-                type: '3'
-            },
-            {
-                img: 'dist/images/s4.jpg',
-                type: '4'
-            },
-            {
-                img: 'dist/images/s5.jpg',
-                type: '5'
-            },
-            {
-                img: 'dist/images/s6.jpg',
-                type: '6'
-            },
-            {
-                img: 'dist/images/s1.jpg',
-                type: '1'
-            },
-            {
-                img: 'dist/images/s2.jpg',
-                type: '2'
-            },
-            {
-                img: 'dist/images/s3.jpg',
-                type: '3'
-            },
-            {
-                img: 'dist/images/s4.jpg',
-                type: '4'
-            },
-            {
-                img: 'dist/images/s5.jpg',
-                type: '5'
-            }
-        ];
+        $scope.pictures = [];
         $scope.type = '';
         $scope.producttype = [
             { name: '所有', id: '', className: 'active' },
@@ -86,4 +39,9 @@ angular.module('app')
             });
             $scope.type = '' + id;
         };
+        model.getProduct('2').then(function(res) {
+            if (res.status === 200) {
+               $scope.pictures = res.data.data; 
+            }
+        });
     }]);

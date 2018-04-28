@@ -31,6 +31,11 @@ angular.module('app')
                 url: '/details/:kind/{type}',
                 templateUrl: rootPath + 'details.html',
                 controller: 'details'
+            })
+            .state('login', {
+                url: '/login',
+                templateUrl: rootPath + 'login.html',
+                controller: 'login'
             });
 
     }]);

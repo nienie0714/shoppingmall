@@ -53,9 +53,6 @@ h3.inner {
 .container-fluid.content {
     padding: 0;
 }
-
-
-
 /*-- header_top --*/
 
 .left-content {
@@ -71,20 +68,13 @@ h3.inner {
             }
         }
         .top_right {
+            width: 200px;
             float: right;
-            ul {
-                width: 405px;
-                height: 50px;
-            }
-            li {
-                width: 100px;
-                float: left;
-                list-style: none;
-            }
-            a {
+            a {s
+                margin-right: 5px;
                 font-size: 6px;
                 color: white;
-                margin: 0 5px 0 0;
+                padding: 15px;
                 &:hover {
                     color: #ff6978;
                     text-decoration: none;
@@ -95,7 +85,25 @@ h3.inner {
                     padding: 1px 10px;
                     transition: all 0.3s ease-in-out;
                 }
-            }
+                i {
+                    margin-left: 10px;
+                }
+            } // .dropdown-menu {
+            //     background: #F3F3F3;
+            //     border: 5px solid rgba(42, 42, 42, .3);
+            //     transform: all 0.5s;
+            //     .form-group {
+            //         margin-left: 1px;
+            //         span {
+            //             font-size: 14px;
+            //             height: 35px;
+            //         }
+            //         .form-control1 {
+            //             font-size: 14px;
+            //             height: 50px;
+            //         }
+            //     }
+            // }
         }
         .top_left {
             float: left;
@@ -133,13 +141,13 @@ h3.inner {
         width: 83%;
         margin: 0 auto;
         .logo {
-            float: left;        
+            float: left;
         }
         .header_right {
             float: right;
             width: 40%;
             span {
-                margin: 0 5px; 
+                margin: 0 5px;
             }
             .cart {
                 margin: 0 10px 2px;
@@ -155,7 +163,9 @@ h3.inner {
                     position: relative;
                     font-size: 0.8725em;
                     /* text-transform: capitalize; */
-                    &:visited, &:hover, &:active {
+                    &:visited,
+                    &:hover,
+                    &:active {
                         background: #ffffff;
                     }
                 }
@@ -211,7 +221,7 @@ h3.inner {
                 display: block;
                 width: 100%;
                 padding-left: 30px;
-                &:hover{
+                &:hover {
                     text-decoration: none;
                     background-color: #252525;
                     border-left: 4px solid #4A4A4A;
@@ -260,6 +270,10 @@ h3.inner {
         }
     }
 }
+
+
+
+
 
 
 /* body {

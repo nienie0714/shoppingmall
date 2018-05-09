@@ -23,11 +23,26 @@ angular.module('app')
                 //console.log($scope.product);
             }
         });
-        // Can also be used with $(document).ready()
-        // $(window).load(function() {
-        //     $('.flexslider').flexslider({
-        //         animation: "slide",
-        //         controlNav: "thumbnails"
-        //     });
-        // });
+
+        // 还没有解决轮播下一个就跳转到另一个页面的问题 <a><span>...</span></a>
+        // app.directive('foodDirective', function() {
+        //     return {
+        //         restrict: 'E',
+        //         replace: true,
+        //         templateUrl: 'ml/food-detail.html', //路径根据此指令所在html文件选择
+        //         link(scope, el, atr) {
+        //             el.on('click', 'header', function(e) {
+        //                 e.stopPropagation(); //防止冒泡
+        //                 e.preventDefault(); //防止默认行为
+        //                 var height = $('body').height() - $('#header').height() - $('#footer').height();
+        //                 $(this).closest('.mask').siblings('.js-card-content').css({
+        //                     width: '100%',
+        //                     height: height,
+        //                     opacity: 1,
+        //                     zIndex: 1
+        //                 });
+        //             });
+        //         }
+        //     }
+
     }]);

@@ -1,160 +1,166 @@
-<div>
-    <!DOCTYPE html>
-    <html ng-app="app">
+<!DOCTYPE html>
+<html ng-app="app">
 
-    <head lang="en">
-        <meta charset="UTF-8">
-        <meta name="renderer" content="webkit">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title ng-bind="titleTxt"></title>
-        <link rel="stylesheet" href="/dist/css/main.css" />
-        <script src="/dist/js/vendor.js"></script>
-        <script src="/dist/js/function.js"></script>
-    </head>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <!-- 移动设备优先  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title ng-bind="titleTxt"></title>
+    <link rel="stylesheet" href="/dist/css/main.css" />
+    <script src="/dist/js/vendor.js"></script>
+    <script src="/dist/js/function.js"></script>
+</head>
 
-    <body ng-controller="appController">
-        <div class="page-container">
-            <!-- content  -->
-            <div class="left-content">
-                <!-- top  header -->
-                <div class="header-section">
-                    <div class="top_bg">
-                        <div class="header_top">
-                            <div class="top_left">
-                                <ul>
-                                    <li><a href="">help</a></li>
-                                    <li><a href="">Contact</a></li>
-                                    <li><a href="">Delivery information</a></li>
-                                </ul>
-                            </div>
-                            <div class="top_right">
-                                <a class="big-link" data-reveal-id="myModal"  href="">
+<body ng-controller="appController">
+    <div class="page-container">
+        <!-- content  -->
+        <div class="left-content">
+            <!-- top  header -->
+            <div class="header-section">
+                <div class="top_bg">
+                    <div class="header_top row">
+                        <div class="top_left col-xs-8 col-sm-8 col-md-6">
+                            <ul>
+                                <li><a href="">help</a></li>
+                                <li><a href="">Contact</a></li>
+                                <li><a href="/#!/orderinfo">Delivery information</a></li>
+                            </ul>
+                        </div>
+                        <div class="top_right col-xs-4 col-sm-4 col-md-6" data-toggle="modal" data-target="#myModal">
+                            <a class="big-link" data-reveal-id="myModal" href="">
                                     <span class="glyphicon glyphicon-user"></span>login
                                     <i class="fa fa-chevron-down downIcon"></i>
                                 </a>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- header  -->
-                <div class="header">
-                    <div class="logo">
-                        <a href="index.html"><img src="./dist/images/logo.png" class="img-responsive" alt=""> </a>
-                    </div>
-                    <div class="header_right">
-                        <div class="cart box_1">
-                            <a href="#">CHECKOUT YOUR ORDER :</a>
-                            <span>$0.00</span> (<span>0</span> items)<img class="cart" src="./dist/images/bag.png" alt=""></span>
-                        </div>
-                        <div class="search">
-                            <!-- 绑定输入框的值到 scope 变量中：-->
-                            <input type="text" ng-model="type" placeholder="search...">
-                            <img src="./dist/images/search.png" alt="">
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <!-- content  -->
-                <div class="center-contents">
-                    <div class="ui-view"></div>
                 </div>
             </div>
-            <!-- sidebar -->
-            <div class="sidebar-menu container contents">
-                <div class="menus js-menus">
-                    <ul class="menu-lists">
-                        <li ng-repeat="menu in menus track by $index" class="js-{{menu.className}}">
-                            <a href="{{::menu.href}}" class="" ng-class="menu.isactive" ng-click="selectmenu($index, index)">
+            <!-- header  -->
+            <div class="row header">
+                <div class="logo col-md-4 ">
+                    <a href="index.html"><img src="./dist/images/logo.png" class="img-responsive" alt=""> </a>
+                </div>
+                <div class="header_right col-md-8">
+                    <div class="cart box_1">
+                        <a href="/#!/orderinfo">CHECKOUT YOUR ORDER :</a>
+                        <span>$0.00</span> (<span>0</span> items)<img class="cart" src="./dist/images/bag.png" alt=""></span>
+                    </div>
+                    <div class="search">
+                        <!-- 绑定输入框的值到 scope 变量中：-->
+                        <input type="text" ng-model="type" placeholder="search...">
+                        <img src="./dist/images/search.png" alt="">
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <!-- content  -->
+            <div class="center-contents">
+                <div class="ui-view"></div>
+            </div>
+        </div>
+        <!-- sidebar -->
+        <div class="sidebar-menu container contents">
+            <div class="menus js-menus">
+                <ul class="menu-lists">
+                    <li ng-repeat="menu in menus track by $index" class="js-{{menu.className}}">
+                        <a href="{{::menu.href}}" class="" ng-class="menu.isactive" ng-click="selectmenu($index)">
                                 <i class="{{::menu.icon}}"></i>
                                 <span>{{::menu.name}}</span>
                             </a>
-                        </li>
-                    </ul>
-                    <div class="history">
-                        <h3 class="history-title">
+                    </li>
+                </ul>
+                <div class="history">
+                    <h3 class="history-title">
                                LOOK HERE!
                         </h3>
-                        <ul class="history-list">
-                            <li ng-repeat="item in history track by $index">
-                                <i class="fa fa-circle circleIcon"></i>
-                                <span>{{item}}</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="history-list">
+                        <li ng-repeat="item in history track by $index">
+                            <i class="fa fa-circle circleIcon"></i>
+                            <span>{{item}}</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="clearfix"></div>
-        <div id="myModal" class="reveal-modal">
-            <h1>jquery导出层</h1>
-            <p>This is a default modal in all its glory, but any of the styles here can easily be changed in the CSS.</p>
-            <a class="close-reveal-modal">&#215;</a>
-        </div>
-    </body>
-    <!-- 
-         注册弹出框
-          下拉菜单式<div class="dropdown">
-                                    <div class="dropdown-menu panel panel-widget forms-panel" aria-labelledby="dLabel">
-                                        <div class="forms">
-                                            <div class="form widget-shadow">
-                                                <div class="panel-body-inputin">
-                                                    <form class="form-horizontal">
-                                                        <div class="form-group has-success">
-                                                            <label class="col-md-4 control-label">
-                                                                Input Email
-                                                            </label>
-                                                            <div class="col-md-8">
-                                                                <div class="input-group input-icon right">
-                                                                    <span class="input-group-addon">
-                                                                        <i class="fa fa-envelope-o"></i>
-                                                                    </span>
-                                                                    <input id="email" class="form-control1" type="text" placeholder="Email Address">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-2">
-                                                                <p class="help-block">Email is valid!</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group has-success">
-                                                            <label class="col-md-4 control-label">
-                                                                Input Password
-                                                            </label>
-                                                            <div class="col-md-8">
-                                                                <div class="input-group input-icon right">
-                                                                    <span class="input-group-addon">
-                                                                        <i class="fa fa-key"></i>
-                                                                    </span>
-                                                                    <input type="password" class="form-control1" placeholder="Password">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
+    </div>
+    <div class="clearfix"></div>
+    <!-- 注册模态框  -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Welcome To Join Us</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="forms">
+                        <div class="form widget-shadow">
+                            <div class="panel-body-inputin">
+                                <form class="form-horizontal">
+                                    <div class="form-group has-success">
+                                        <label class="col-md-4 control-label">
+                                            Input Email
+                                        </label>
+                                        <div class="col-md-8">
+                                            <div class="input-group input-icon right">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-envelope-o"></i>
+                                                </span>
+                                                <input id="email" class="form-control1" type="text" placeholder="Email Address">
                                             </div>
                                         </div>
-                                    </div> -->
-    <!--  <ul class="dropdown-menu menu-list" aria-labelledby="dLabel">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-id-card-o" ></i>
-                                                <span>Profile</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                            <i class="fa fa-sign-out"></i>
-                                            <span>Sign Out</span>
-                                        </a>
-                                        </li>
-                                    </ul>
-                                </div> -->
-    <!-- 原始样式<ul>
-                                    <li><a href="/#!/login"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
-                                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
-                                </ul> -->
-    -->
+                                        <!-- <div class="col-sm-2">
+                                            <p class="help-block">Email is valid!</p>
+                                        </div> -->
+                                    </div>
+                                    <div class="form-group has-success">
+                                        <label class="col-md-4 control-label">
+                                            Input Password
+                                        </label>
+                                        <div class="col-md-8">
+                                            <div class="input-group input-icon right">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-key"></i>
+                                                </span>
+                                                <input type="password" class="form-control1" placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!--  <ul class="dropdown-menu menu-list" aria-labelledby="dLabel">
+            <li>
+                <a href="#">
+                    <i class="fa fa-id-card-o" ></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <i class="fa fa-sign-out"></i>
+                <span>Sign Out</span>
+            </a>
+            </li>
+        </ul>
+    </div> -->
+<!-- 原始样式<ul>
+        <li><a href="/#!/login"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+    </ul> -->
+-->
 
-    </html>
-</div>
+</html>

@@ -1,0 +1,69 @@
+<div class="orderinfo-module">
+    <div class="order_main row">
+        <div class="col-sm-12 col-md-12">
+        	<div class="col-sm-12 col-md-12">
+			    <span class="col-md-9 allpro">All Products</span>
+			    <span class="orderaddr col-md-3">配送至：
+			        <div class="btn-group">
+			            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			                北京朝阳区三环到四环之间<span class="caret"></span>
+			            </button>
+			            <ul class="dropdown-menu" role="menu">
+			                <li><a href="">北京</a></li>
+			                <li><a href="">朝阳区</a></li>
+			                <li><a href="">三环到四环之间</a></li>
+			                <!-- <li class="divider"></li> -->
+			            </ul>
+			        </div>
+			    </span>
+			</div>
+			<table class="table table-model-2 table-hover">
+	            <thead>
+	                <tr>
+	                    <th class="col-md-1">
+	                        <input type="checkbox"> 全选</th>
+	                    <th class="col-md-2 text-center">商品</th>
+	                    <th class="col-md-3 text-center">商品名称</th>
+	                    <th class="col-md-1">颜色</th>
+	                    <th class="col-md-1">单价(元)</th>
+	                    <th class="col-md-1">数量</th>
+	                    <th class="col-md-1">小计(元)</th>
+	                    <th class="col-md-2 text-center">操作</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr ng-repeat="item in orderlist track by $index">
+	                    <td><input type="checkbox"></td>
+	                    <td>
+	                    	<img ng-src="{{item.productimg}}" width="200px" alt="">
+	                    </td>
+	                    <td>{{item.productname}}</td>
+	                    <td>{{item.color}}</td>
+	                    <td>{{item.perprice}}</td>
+	                    <td>{{item.count}}</td>
+	                    <td>{{item.price}}</td>
+	                    <td class="text-center">
+	                    	<a><span>删除</span><br></a>
+	                    	<a><span>移到我的关注</span></a>
+	                    </td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        <table class="table table-striped">
+	        	<thead class="tabhead">
+	                <tr>
+	                    <th class="col-md-1">
+	                        <input type="checkbox"> 全选</th>
+	                    <th class="col-md-1"><a>删除选中的商品</a></th>
+	                    <th class="col-md-1"><a>移到我的关注</a></th>
+	                    <th class="col-md-1">已选择<span class="order_price">2</span>件商品</th>
+	                    <th class="col-md-2">总价（不含运费）：￥<span class="order_price">4249.00</span></th>
+	                    <th class="col-md-1 text-center order_buy">
+	                    	<a>去结算</a>
+	                    </th>
+	                </tr>
+	            </tbody>
+	        </table>
+    </div>
+</div>
+</div>

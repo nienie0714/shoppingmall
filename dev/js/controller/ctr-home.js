@@ -3,9 +3,9 @@
  */
 'use strict';
 angular.module('app')
-    .controller('home', ['$scope', 'current', function($scope, current) {
-        current();
+    .controller('home', ['$scope', function($scope) {
         $scope.model = 'Home';
+        //drawCanvas();
         $(document).ready(function() {
             $('#demo-pie-1').pieChart({
                 barColor: '#3bb2d0',

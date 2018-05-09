@@ -1,4 +1,50 @@
 {
+    "producttype": [
+    {
+        "name": "所有",
+        "id": "",
+        "className": "activee"
+    },
+    {
+        "name": "Hermes",
+        "id": "1",
+        "className": ""
+    },
+    {
+        "name": "LV",
+        "id": "2",
+        "className": ""
+    },
+    {
+        "name": "CHANEL",
+        "id": "3",
+        "className": ""
+    },
+    {
+        "name": "Prada",
+        "id": "4",
+        "className": ""
+    },
+    {
+        "name": "BottegaVeneta",
+        "id": "5",
+        "className": ""
+    },
+    {
+        "name": "Fendi",
+        "id": "6",
+        "className": ""
+    },
+    {
+        "name": "Gucci",
+        "id": "7",
+        "className": ""
+    },
+    {
+        "name": "Dior",
+        "id": "8",
+        "className": ""
+    }],
 	"data": [
     	{
             "img": "dist/images/b1.jpg",

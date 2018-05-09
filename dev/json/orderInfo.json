@@ -1,0 +1,20 @@
+{
+	"orderlist": [
+        {
+            "productimg": "./dist/images/g1.jpg",
+            "productname": "全球购Gucci GG0008S 欧美时尚太阳镜墨镜女士",
+            "color": "黑色 002",
+            "perprice": "3581.00",
+            "count": "1",
+            "price": "3581.00"
+        },
+        {
+            "productimg": "./dist/images/s1.jpg",
+            "productname": "全球购耐克Nike PG2 保罗乔治二代实战篮球鞋",
+            "color": "NCAA配色",
+            "perprice": "2222.00",
+            "count": "2",
+            "price": "4444.00"
+        }
+    ]
+}

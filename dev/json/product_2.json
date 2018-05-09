@@ -1,4 +1,40 @@
 {
+    "producttype": [
+    {
+        "name": "所有",
+        "id": "",
+        "className": "activee"
+    },
+    {
+        "name": "AJ1",
+        "id": "1",
+        "className": ""
+    },
+    {
+        "name": "AJ2",
+        "id": "2",
+        "className": ""
+    },
+    {
+        "name": "AJ3",
+        "id": "3",
+        "className": ""
+    },
+    {
+        "name": "AJ4",
+        "id": "4",
+        "className": ""
+    },
+    {
+        "name": "AJ5",
+        "id": "5",
+        "className": ""
+    },
+    {
+        "name": "AJ6",
+        "id": "6",
+        "className": ""
+    }],
 	"data": [
     	{
             "img": "dist/images/s1.jpg",

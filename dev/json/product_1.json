@@ -1,28 +1,63 @@
 {
-	"data": [
-    	{
-            "img": "dist/images/g1.jpg",
-            "type": "1"
-        },
-        {
-            "img": "dist/images/g2.jpg",
-            "type": "2"
-        },
-        {
-            "img": "dist/images/g3.jpg",
-            "type": "3"
-        },
-        {
-            "img": "dist/images/g4.jpg",
-            "type": "4"
-        },
-        {
-            "img": "dist/images/g5.jpg",
-            "type": "5"
-        },
-        {
-            "img": "dist/images/g6.jpg",
-            "type": "6"
-        }
-    ]
+    "producttype": [
+    {
+        "name": "所有",
+        "id": "",
+        "className": "activee"
+    },
+    {
+        "name": "太阳镜",
+        "id": "1",
+        "className": ""
+    },
+    {
+        "name": "防辐射眼镜",
+        "id": "2",
+        "className": ""
+    },
+    {
+        "name": "光学镜",
+        "id": "3",
+        "className": ""
+    },
+    {
+        "name": "游泳镜",
+        "id": "4",
+        "className": ""
+    },
+    {
+        "name": "装饰眼镜",
+        "id": "5",
+        "className": ""
+    },
+    {
+        "name": "老花镜",
+        "id": "6",
+        "className": ""
+    }],
+    "data": [
+    {
+        "img": "dist/images/g1.jpg",
+        "type": "1"
+    },
+    {
+        "img": "dist/images/g2.jpg",
+        "type": "2"
+    },
+    {
+        "img": "dist/images/g3.jpg",
+        "type": "3"
+    },
+    {
+        "img": "dist/images/g4.jpg",
+        "type": "4"
+    },
+    {
+        "img": "dist/images/g5.jpg",
+        "type": "5"
+    },
+    {
+        "img": "dist/images/g6.jpg",
+        "type": "6"
+    }]
 }

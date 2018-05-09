@@ -1,9 +1,9 @@
 # AngularJs完成shopping单页面网页
 ## 安装使用方法
-####1 安装nodejs 
+#### 1 安装nodejs 
    5.0 以上
 
-####2 安装gulp 和 bower , http-server
+#### 2 安装gulp 和 bower , http-server
 	 建议使用cnpm 
 
 		  安装淘宝镜像 cnpm
@@ -17,22 +17,22 @@
   			  
 			   			  
 
-####3 安装 包依赖 插件安装
+#### 3 安装 包依赖 插件安装
 	npm install  (cnpm install)
 	bower install
 		
  
-####4 执行编译
+#### 4 执行编译
     gulp build 
 
-####5 启动服务 
+#### 5 启动服务 
 	http-server -p 8081
 
-####6 打开chrome浏览器
+#### 6 打开chrome浏览器
  	localhost:8081  
 
 
-####7 自动化测试
+#### 7 自动化测试
 
 	cd /homework
 	npm test
